@@ -1,0 +1,15 @@
+/* .footer {
+    position: absolute;
+    bottom: 0;
+    width: 85%;
+    height: 60px;
+    line-height: 60px;
+}
+.container { height: 100%;} */
+.footer{  
+    position: absolute;
+    bottom: 0;
+    width: 85%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
