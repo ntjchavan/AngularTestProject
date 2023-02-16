@@ -1,0 +1,11 @@
+[
+    {
+        "empID": 1, "empFName": "Netaji", "empLName": "Chavan", "gender": "M", "salary": 90000, "isActive": true
+    },
+    {
+        "empID": 2, "empFName": "Shivam", "empLName": "Chavan", "gender": "M", "salary": 78000, "isActive": true
+    },
+    {
+        "empID": 3, "empFName": "Pradnya", "empLName": "Chavan", "gender": "F", "salary": 98000, "isActive": false
+    }
+]

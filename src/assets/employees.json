@@ -1,0 +1,26 @@
+[
+    {
+        "empID": 1, "empFName": "Netaji", "empLName": "Chavan", "gender": "M", "Salary": 90000,
+        "empHistory":[
+            {"companyName": "TCS", "fromDate" : "2020-11-15", "endDate": "", "isCurrent":"Y"},
+            {"companyName": "Infosys", "fromDate" : "2018-09-20", "endDate": "2020-11-08", "isCurrent":"N"},
+            {"companyName": "Wipro", "fromDate" : "2018-02-01", "endDate": "2018-09-15", "isCurrent":"N"}
+        ]
+    },
+    {
+        "empID": 2, "empFName": "Shivam", "empLName": "Chavan", "gender": "M", "Salary": 78000,
+        "empHistory":[
+            {"companyName": "JP Morgan", "fromDate" : "2021-11-15", "endDate": "", "isCurrent":"Y"},
+            {"companyName": "BNP Paribas", "fromDate" : "2018-09-20", "endDate": "2021-11-08", "isCurrent":"N"},
+            {"companyName": "Capgemini", "fromDate" : "2017-02-01", "endDate": "2018-09-15", "isCurrent":"N"}
+        ]
+    },
+    {
+        "empID": 3, "empFName": "Pradnya", "empLName": "Chavan", "gender": "F", "Salary": 98000,
+        "empHistory":[
+            {"companyName": "Cognizant", "fromDate" : "2022-11-15", "endDate": "", "isCurrent":"Y"},
+            {"companyName": "Mindtree", "fromDate" : "2018-09-20", "endDate": "2022-11-08", "isCurrent":"N"},
+            {"companyName": "EbixCash", "fromDate" : "2016-02-01", "endDate": "2018-09-15", "isCurrent":"N"}
+        ]
+    }
+]
