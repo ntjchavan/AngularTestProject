@@ -1,5 +1,5 @@
 <button type="button" class="btn btn-primary m-2 float-end" routerLink="/employeeadd">
-  Add Department
+  Add Employee
 </button>
 
 <table class="table table-bordered table-striped mt-2">
@@ -19,11 +19,13 @@
             <th>{{ employee.empID }}</th>
             <th>{{ employee.empFName }}</th>
             <th>{{ employee.empLName }}</th>
-            <th>{{ employee.gender }}</th>
-            <th>{{ employee.salary }}</th>
-            <th>{{ employee.isActive }}</th>
+            <th>{{ employee.gender | gender }}</th>
+            <th>{{ employee.salary | currency : 'INR' }}</th>
+            <th>{{ employee.isActive | booleanValue }}</th>
             <th>
-                <button (click)="ViewEmployee(employee.empID)" class="btn btn-info">View</button>
+                <button (click)="ViewEmployee(employee.empID)" class="btn btn-info m-1">View(Function)</button>
+                <button class="btn btn-success m-2" [routerLink]="[employee.empID,'edit']">View(RouterLink)</button>
+                <button class="btn btn-primary" routerLink="/employeeadd" [queryParams]="{id: employee.empID}">View(QueryString)</button>
             </th>
         </tr>
     </tbody>

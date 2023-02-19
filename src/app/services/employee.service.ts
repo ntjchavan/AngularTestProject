@@ -10,6 +10,7 @@ import { Employee } from '../classes/employee';
 export class EmployeeService {
 
   url: string = '../assets/employeesimple.json';
+  private employees: Employee[]=[];
   //empData: any = jsonData;
   
   constructor(private httpClient: HttpClient) { }
@@ -17,5 +18,13 @@ export class EmployeeService {
   getAllEmployee(): Observable<Employee[]>{
     return this.httpClient.get<Employee[]>(this.url);
   }
+
+  // GetEmployeeByID(id: number): Observable<Employee>{
+  //   this.getAllEmployee().subscribe( (resp: Employee[]) => {
+  //     return resp.filter(data => data.empID = id);
+  //   });
+  //   //return this.employees;    
+  // }
+
 
 }

@@ -1,2 +1,61 @@
+<div class="form-group" (submit)="Save()">
+    <form [formGroup]="empForm" class="row g-3">
 
-<button (click)="BackToEmployeeList()" class="btn btn-info">Back To Employee List</button>
+        <div class="col-md-6">
+            <legend>{{ buttonTitle }}</legend>
+        </div>
+        <div class="col-md-6">
+            <button (click)="BackToEmployeeList()" class="btn btn-info m-2 float-end">Back To Employee List</button>
+        </div>
+        <div class="col-md-6">
+            <label for="empID" class="form-label">ID</label>
+            <input type="text" name="empID" id="empID" class="form-control" formControlName="empID" appHighlight>
+        </div>
+        <div class="col-md-6">
+            <label for="empMode" class="form-label">Employmeent Mode</label>
+            <select id="empMode" formControlName="mode" (change)="SelectedValue($event)" class="form-control" appHighlight>
+                <option value="">[--select--]</option>
+                <option *ngFor="let e of employeeMode" [value]="e.value"> {{ e.display }} </option>
+            </select>
+        </div>
+        <div class="col-md-6">
+            <label for="empFName" class="form-label">First Name</label>
+            <input type="text" name="empFName" id="empFName" class="form-control" formControlName="empFName" appHighlight>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label" for="empLName">Last Name</label>
+            <input type="text" name="empLName" id="empLName" class="form-control" formControlName="empLName" appHighlight>
+        </div>
+        <div class="col-md-6">
+            <label for="salary" class="form-label">Salary</label>
+            <input type="number" name="salary" id="salary" class="form-control" formControlName="salary" appHighlight>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Gender</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="male" value="M" formControlName="gender">
+                <label class="form-check-label" for="male">
+                    Male
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="female" value="F" formControlName="gender">
+                <label class="form-check-label" for="female">
+                    Female
+                </label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="isActive" id="isActive" formControlName="isActive">
+                <label class="form-check-label" for="isActive">
+                    Is Active
+                </label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-success m-2">Save & Continue</button>
+            <button type="button" (click)="Clear()" class="btn btn-info">Clear</button>
+        </div>
+    </form>
+</div>

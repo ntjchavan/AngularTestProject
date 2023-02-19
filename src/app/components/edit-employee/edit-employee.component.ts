@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Employee } from 'src/app/classes/employee';
+import { EmployeeService } from 'src/app/services/employee.service';
 
 @Component({
   selector: 'app-edit-employee',
@@ -7,21 +10,88 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./edit-employee.component.css']
 })
 export class EditEmployeeComponent implements OnInit {
-
   id: number=0;
-  constructor(private router: Router, private route: ActivatedRoute){}
+  sub: any;
+  buttonTitle: string='Add Employee';
+  isAddMode: boolean = true;
+  employee: Employee;
+  empForm: FormGroup;
+  employeeMode: any[];
+
+  constructor(private router: Router, private route: ActivatedRoute, private formBuilder: FormBuilder, 
+    private employeeService: EmployeeService){}
 
   ngOnInit(): void {
     this.GetParamID();
+    this.EmployeeMode();
+    this.InitForm();
+    console.log(this.employeeMode);
   }
-
+  
   BackToEmployeeList(): void{
     this.router.navigate(['employee']);
   }
-
+  
   GetParamID(): void{
-    this.id = this.route.snapshot.params['id'] ? this.route.snapshot.params['id'] : 0;
-    console.log(this.id);
+    this.route.queryParamMap.subscribe(params => { 
+      this.sub = params.get('id')
+    });
+
+    this.id = parseInt(this.sub);
+    
+    if(Number.isNaN(this.id) || this.id == 0){
+      this.id = this.route.snapshot.params['id'] ? this.route.snapshot.params['id'] : 0;
+    }
+    this.isAddMode = this.id == 0 ? true : false;
+    console.log('emp id', this.id);
+  }
+  
+  InitForm(): void{
+    this.buttonTitle = this.isAddMode ? 'Add Employee' : 'Update Employee';
+    
+    this.empForm = this.formBuilder.group({
+      empID: ['', Validators.required],
+      empFName: ['', [Validators.required, Validators.minLength(4)]],
+      empLName: ['', [Validators.minLength(5)]],
+      salary: [0, Validators.min(1)],
+      gender: ['M'],
+      isActive: [],
+      mode: ['']
+    });
+    
+    if(!this.isAddMode){
+      this.GetEmployeeByID();
+    }
+  }
+
+  GetEmployeeByID(): void {
+      this.employeeService.getAllEmployee().subscribe( (data: Employee[]) => {
+        this.employee = data.find(d => d.empID == this.id)!
+        this.empForm.patchValue(this.employee);
+        //or
+        //this.empForm.patchValue(<Employee>data.find(d=> d.empID == this.id));
+      });
+  }
+
+  EmployeeMode(): void{
+    this.employeeMode = [
+      {"value": '1', "display": "Full Time"},
+      {"value": '2', "display": "Part Time"}
+    ]
+  }
+
+  SelectedValue(e: any): void{
+    console.log(e.target.value);
+  }
+
+  Save(): void{
+    console.log('save');
+    console.log(this.empForm.value);
+  }
+
+  Clear(): void{
+    this.empForm.reset();
+    console.log('clear');
   }
 
 }

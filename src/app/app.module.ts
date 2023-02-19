@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +13,9 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { EmployeeComponent } from './components/employee/employee.component';
 import { EditEmployeeComponent } from './components/edit-employee/edit-employee.component';
+import { HighlightDirective } from './directives/highlight.directive';
+import { GenderPipe } from './pipes/gender.pipe';
+import { BooleanValuePipe } from './pipes/boolean-value.pipe';
 
 @NgModule({
   declarations: [
@@ -24,13 +27,17 @@ import { EditEmployeeComponent } from './components/edit-employee/edit-employee.
     AboutusComponent,
     NotfoundComponent,
     EmployeeComponent,
-    EditEmployeeComponent
+    EditEmployeeComponent,
+    HighlightDirective,
+    GenderPipe,
+    BooleanValuePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
