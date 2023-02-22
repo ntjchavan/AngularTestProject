@@ -17,6 +17,7 @@ export class EditEmployeeComponent implements OnInit {
   employee: Employee;
   empForm: FormGroup;
   employeeMode: any[];
+  addemployee: Employee = new Employee();
 
   constructor(private router: Router, private route: ActivatedRoute, private formBuilder: FormBuilder, 
     private employeeService: EmployeeService){}
@@ -84,14 +85,24 @@ export class EditEmployeeComponent implements OnInit {
     console.log(e.target.value);
   }
 
-  Save(): void{
-    console.log('save');
-    console.log(this.empForm.value);
-  }
-
   Clear(): void{
     this.empForm.reset();
     console.log('clear');
+  }
+
+  Save(): void{
+    console.log('save');
+    console.log(this.empForm.value);
+    
+    this.addemployee.empID = this.empForm.value.empID;
+    this.addemployee.empFName = this.empForm.value.empFName;
+    this.addemployee.empLName = this.empForm.value.empLName;
+    this.addemployee.salary = this.empForm.value.salary;
+    this.addemployee.gender = this.empForm.value.gender;
+    this.addemployee.isActive = this.empForm.value.isActive;
+    
+    this.employeeService.AddEmployee(this.addemployee);
+
   }
 
 }
