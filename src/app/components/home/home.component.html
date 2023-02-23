@@ -1,1 +1,33 @@
-<p>home works!</p>
+<div class="row m-1">
+    <div class="col-sm-6">
+        <div class="card" style="height: 10rem;">
+            <p>Home component contents</p>
+            <h3>Send data to parent</h3>
+            <div class="col-sm-6">
+                <input type="text" name="txtname" id="txtname" [(ngModel)]="pname" class="form-control">
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card" style="height: 10rem;">
+            <p>Home component. Contents from child component</p>
+            <h3>{{ cname }}</h3>
+        </div>
+    </div>
+</div>
+<div class="row m-1">
+    <div class="col-sm-6">
+        <div class="card" style="height: 10rem;">
+            <div class="card-body">
+                <app-homesub1 [name]="pname"></app-homesub1>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card" style="height: 10rem;">
+            <div class="card-body">
+                <app-homesub2 (eventName)="fromParent($event)"></app-homesub2>
+            </div>
+        </div>
+    </div>
+</div>

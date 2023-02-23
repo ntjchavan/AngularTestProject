@@ -16,6 +16,8 @@ import { EditEmployeeComponent } from './components/edit-employee/edit-employee.
 import { HighlightDirective } from './directives/highlight.directive';
 import { GenderPipe } from './pipes/gender.pipe';
 import { BooleanValuePipe } from './pipes/boolean-value.pipe';
+import { Homesub1Component } from './components/homesub1/homesub1.component';
+import { Homesub2Component } from './components/homesub2/homesub2.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { BooleanValuePipe } from './pipes/boolean-value.pipe';
     EditEmployeeComponent,
     HighlightDirective,
     GenderPipe,
-    BooleanValuePipe
+    BooleanValuePipe,
+    Homesub1Component,
+    Homesub2Component
   ],
   imports: [
     BrowserModule,

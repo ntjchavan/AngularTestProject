@@ -21,15 +21,16 @@ export class EmployeeService {
   }
 
   AddEmployee(emp: Employee):string{
-    this.getAllEmployee().subscribe((emp1:Employee[])=>{
-      this.employees = emp1;
-    });
+    //write logic to call API & save data
+    // this.getAllEmployee().subscribe((emp1:Employee[])=>{
+    //   this.employees = emp1;
+    // });
 
-    this.employees.push(emp);
+    // this.employees.push(emp);
 
-    console.log(this.employees);
+    //printed data in console
+    console.log(emp);
     return "Record Added";
-
   }
  
 

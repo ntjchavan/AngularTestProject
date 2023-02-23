@@ -34,6 +34,8 @@ export class EditEmployeeComponent implements OnInit {
   }
   
   GetParamID(): void{
+
+    //from querystring e.g. employeeadd?id=2
     this.route.queryParamMap.subscribe(params => { 
       this.sub = params.get('id')
     });
@@ -41,6 +43,7 @@ export class EditEmployeeComponent implements OnInit {
     this.id = parseInt(this.sub);
     
     if(Number.isNaN(this.id) || this.id == 0){
+      //from parameter - e.g. employee/2/edit
       this.id = this.route.snapshot.params['id'] ? this.route.snapshot.params['id'] : 0;
     }
     this.isAddMode = this.id == 0 ? true : false;
@@ -91,8 +94,8 @@ export class EditEmployeeComponent implements OnInit {
   }
 
   Save(): void{
-    console.log('save');
-    console.log(this.empForm.value);
+    // console.log('save');
+    // console.log(this.empForm.value);
     
     this.addemployee.empID = this.empForm.value.empID;
     this.addemployee.empFName = this.empForm.value.empFName;
@@ -100,8 +103,10 @@ export class EditEmployeeComponent implements OnInit {
     this.addemployee.salary = this.empForm.value.salary;
     this.addemployee.gender = this.empForm.value.gender;
     this.addemployee.isActive = this.empForm.value.isActive;
-    
-    this.employeeService.AddEmployee(this.addemployee);
+        
+    let val = this.employeeService.AddEmployee(this.addemployee);
+    console.log(val, 'data added in console. Mode - ', this.empForm.value.mode);
+    this.router.navigate(['employee']);
 
   }
 
