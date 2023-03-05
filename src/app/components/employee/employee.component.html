@@ -25,6 +25,7 @@
             <th>
                 <button (click)="ViewEmployee(employee.empID)" class="btn btn-info m-1">View(Function)</button>
                 <button class="btn btn-success m-2" [routerLink]="[employee.empID,'edit']">View(RouterLink)</button>
+                <button class="btn btn-success m-2" [routerLink]="['/employeeedit',employee.empID]">View1(RouterLink)</button>
                 <button class="btn btn-primary" routerLink="/employeeadd" [queryParams]="{id: employee.empID}">View(QueryString)</button>
             </th>
         </tr>

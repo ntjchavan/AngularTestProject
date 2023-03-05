@@ -18,6 +18,10 @@ import { GenderPipe } from './pipes/gender.pipe';
 import { BooleanValuePipe } from './pipes/boolean-value.pipe';
 import { Homesub1Component } from './components/homesub1/homesub1.component';
 import { Homesub2Component } from './components/homesub2/homesub2.component';
+import { Aboutussub1Component } from './components/aboutussub1/aboutussub1.component';
+import { Aboutussub2Component } from './components/aboutussub2/aboutussub2.component';
+import { ResolveGuard } from './guards/resolve.guard';
+import { EmployeeresolverComponent } from './components/employeeresolver/employeeresolver.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +38,10 @@ import { Homesub2Component } from './components/homesub2/homesub2.component';
     GenderPipe,
     BooleanValuePipe,
     Homesub1Component,
-    Homesub2Component
+    Homesub2Component,
+    Aboutussub1Component,
+    Aboutussub2Component,
+    EmployeeresolverComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +50,7 @@ import { Homesub2Component } from './components/homesub2/homesub2.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ResolveGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

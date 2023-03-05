@@ -1,1 +1,50 @@
-<p>aboutus works!</p>
+<div class="row m-1">
+    <div class="col-sm-6">
+        <div class="card" style="height: 10rem;">
+            <p>About us component, Sectoin-1, example of ng-content or content projection</p>
+            <table class="table table-bordered">
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                </tr>
+                <tr *ngFor="let prod of products">
+                    <th>{{ prod.prodID }}</th>
+                    <th>{{ prod.prodName }}</th>
+                    <th>{{ prod.qty }}</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card" style="height: 10rem;">
+            <p>About us component, Sectoin-2, example of ng-content or content projection</p>
+        </div>
+    </div>
+</div>
+<div class="row m-1">
+    <div class="col-sm-6">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card" style="height: 22rem;">
+                    <app-aboutussub1 [productDtl]="products">
+                        <legend class="header1">Header, section 1</legend>
+                        <legend id="footer1">Footer, section 1</legend>
+                        <p>By paragraph element</p>
+                        <legend element>By Element</legend>
+                    </app-aboutussub1>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card" style="height: 22rem;">
+                    ok
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card" style="height: 22rem;">
+            <app-aboutussub2></app-aboutussub2>
+        </div>
+    </div>
+</div>
