@@ -22,6 +22,8 @@ import { Aboutussub1Component } from './components/aboutussub1/aboutussub1.compo
 import { Aboutussub2Component } from './components/aboutussub2/aboutussub2.component';
 import { ResolveGuard } from './guards/resolve.guard';
 import { EmployeeresolverComponent } from './components/employeeresolver/employeeresolver.component';
+import { Contactsharedata1Component } from './components/contactsharedata1/contactsharedata1.component';
+import { Contactsharedata2Component } from './components/contactsharedata2/contactsharedata2.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { EmployeeresolverComponent } from './components/employeeresolver/employe
     Homesub2Component,
     Aboutussub1Component,
     Aboutussub2Component,
-    EmployeeresolverComponent
+    EmployeeresolverComponent,
+    Contactsharedata1Component,
+    Contactsharedata2Component
   ],
   imports: [
     BrowserModule,
