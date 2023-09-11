@@ -9,16 +9,26 @@ import { SharedatataService } from 'src/app/services/sharedatata.service';
 export class Contactsharedata1Component implements OnInit {
 
   testName: string = '';
+  counter: number=0;
 
   constructor(private shareData: SharedatataService){}
 
   ngOnInit(): void {
-    
+    this.incrementCnt();
+    this.GetCounter();
   }
 
   changeName(){
     console.log(this.testName);
     this.shareData.changeName(this.testName);
+  }
+
+  incrementCnt() {
+    this.shareData.IncreamentCounter();
+  }
+
+  GetCounter() {
+    this.counter = this.shareData.GetCounter();
   }
 
 

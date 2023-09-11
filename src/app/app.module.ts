@@ -24,6 +24,15 @@ import { ResolveGuard } from './guards/resolve.guard';
 import { EmployeeresolverComponent } from './components/employeeresolver/employeeresolver.component';
 import { Contactsharedata1Component } from './components/contactsharedata1/contactsharedata1.component';
 import { Contactsharedata2Component } from './components/contactsharedata2/contactsharedata2.component';
+import { SharedatataService } from './services/sharedatata.service';
+import { InterviewComponent } from './components/interview/interview.component';
+import { Interview1Component } from './components/interview1/interview1.component';
+import { IntervieweditComponent } from './components/interviewedit/interviewedit.component';
+import { BooltogenderPipe } from './pipes/booltogender.pipe';
+import { SetcolorDirective } from './directives/setcolor.directive';
+import { ParentComponent } from './components/parent/parent.component';
+import { ChildComponent } from './components/child/child.component';
+import { ValidationsComponent } from './components/validations/validations.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +54,15 @@ import { Contactsharedata2Component } from './components/contactsharedata2/conta
     Aboutussub2Component,
     EmployeeresolverComponent,
     Contactsharedata1Component,
-    Contactsharedata2Component
+    Contactsharedata2Component,
+    InterviewComponent,
+    Interview1Component,
+    IntervieweditComponent,
+    BooltogenderPipe,
+    SetcolorDirective,
+    ParentComponent,
+    ChildComponent,
+    ValidationsComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +71,7 @@ import { Contactsharedata2Component } from './components/contactsharedata2/conta
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [ResolveGuard],
+  providers: [ResolveGuard, SharedatataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,22 @@
+
+<div class="row m-1">
+    <div class="col-sm-4">
+        <h3>Check life cycly events in console</h3>
+    </div>
+    <div class="col-sm-4">
+        <label for="box">Reference Variable</label>
+        <input class="form-control" #box >
+    </div>
+    <div class="col-sm-4">
+        <button class="btn btn-success" (click)="Update(box.value)">Submit</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4">
+        <button (click)="Inc()" class="btn btn-success">Increment</button>
+        <app-child [fromParent]="testValue" #childView></app-child>
+    </div>
+    <div class="col-sm-8">
+        test
+    </div>
+</div>

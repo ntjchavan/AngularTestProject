@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Resolve, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Resolve } from '@angular/router';
 import { Employee } from '../classes/employee';
 import { EmployeeService } from '../services/employee.service';
 

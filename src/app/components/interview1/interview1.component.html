@@ -1,0 +1,15 @@
+<p>Child Component</p>
+<div class="row m-1">
+    <div class="col-sm-6">
+        Got data: {{ fromInput }}
+    </div>
+</div>
+<div class="row m-1">
+    <div class="col-sm-6">
+        <ng-content select="span"></ng-content>
+        <input type="text" name="Name" #name>
+        <button class="btn btn-info" (click)="setOutputValue(name.value)">Send Data</button>
+        <ng-content select="#test"></ng-content>
+        <ng-content></ng-content>
+    </div>
+</div>
