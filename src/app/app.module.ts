@@ -33,6 +33,8 @@ import { SetcolorDirective } from './directives/setcolor.directive';
 import { ParentComponent } from './components/parent/parent.component';
 import { ChildComponent } from './components/child/child.component';
 import { ValidationsComponent } from './components/validations/validations.component';
+import { ReactiveformsComponent } from './components/reactiveforms/reactiveforms.component';
+import { ReactiveaddComponent } from './components/reactiveadd/reactiveadd.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +64,9 @@ import { ValidationsComponent } from './components/validations/validations.compo
     SetcolorDirective,
     ParentComponent,
     ChildComponent,
-    ValidationsComponent
+    ValidationsComponent,
+    ReactiveformsComponent,
+    ReactiveaddComponent
   ],
   imports: [
     BrowserModule,

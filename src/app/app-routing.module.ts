@@ -13,6 +13,8 @@ import { Interview1Component } from './components/interview1/interview1.componen
 import { IntervieweditComponent } from './components/interviewedit/interviewedit.component';
 import { ParentComponent } from './components/parent/parent.component';
 import { ValidationsComponent } from './components/validations/validations.component';
+import { ReactiveformsComponent } from './components/reactiveforms/reactiveforms.component';
+import { ReactiveaddComponent } from './components/reactiveadd/reactiveadd.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -33,6 +35,9 @@ const routes: Routes = [
   { path: 'interview1', component: Interview1Component, pathMatch: 'full' },
   { path: 'parent', component: ParentComponent, pathMatch: 'full' },
   { path: "validations", component: ValidationsComponent, pathMatch: 'full' },
+  { path: "reactiveform", component: ReactiveformsComponent, pathMatch: 'full' },
+  { path: 'reactiveadd', component: ReactiveaddComponent, pathMatch: 'full' },
+  { path: 'reactiveadd/:rid/edit', component: ReactiveaddComponent, pathMatch: 'full' },
   { path: '', component: HomeComponent },
   { path: '**', component: NotfoundComponent }
 ];

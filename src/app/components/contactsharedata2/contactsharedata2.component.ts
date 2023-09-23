@@ -5,7 +5,6 @@ import { SharedatataService } from 'src/app/services/sharedatata.service';
   selector: 'app-contactsharedata2',
   templateUrl: './contactsharedata2.component.html',
   styleUrls: ['./contactsharedata2.component.css'],
-  providers: [SharedatataService]
 })
 export class Contactsharedata2Component implements OnInit {
 

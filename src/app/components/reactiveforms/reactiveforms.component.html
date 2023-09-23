@@ -1,0 +1,26 @@
+<div class="container m-2">
+    <div class="float-end">
+        <button type="button" class="btn btn-primary m-1" routerLink="/reactiveadd">Add New List</button>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Type</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of list">
+                <td> {{ data.rId }} </td>
+                <td> {{ data.rName }} </td>
+                <td> {{ data.rType }} </td>
+                <td>
+                    <button type="button" class="btn btn-info m-1" [routerLink]="['/reactiveadd', data.rId,'edit']">Update</button>
+                    <a type="button" class="btn btn-danger" (click)="DeleteItem(data.rId)">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
