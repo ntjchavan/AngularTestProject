@@ -14,7 +14,7 @@
 <div class="row">
     <div class="col-sm-4">
         <button (click)="Inc()" class="btn btn-success">Increment</button>
-        <app-child [fromParent]="testValue" #childView></app-child>
+        <app-child (toParent)="getChildData($event)" [fromParent]="testValue" #childView></app-child>
     </div>
     <div class="col-sm-8">
         test

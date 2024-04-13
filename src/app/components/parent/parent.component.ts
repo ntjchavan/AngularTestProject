@@ -1,21 +1,23 @@
-import { ChangeDetectionStrategy, Component, OnChanges, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DoCheck, OnChanges, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ChildComponent } from '../child/child.component';
 
 @Component({
   selector: 'app-parent',
   templateUrl: './parent.component.html',
-  styleUrls: ['./parent.component.css']
+  styleUrls: ['./parent.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
-export class ParentComponent implements OnInit, OnChanges {
+export class ParentComponent implements OnInit, OnChanges, DoCheck {
 
   testValue: string="testing value";
+  childValue: string;
+
   @ViewChild('childView') child: ChildComponent;
   constructor(){}
 
   ngOnChanges(): void {
     console.log("parent on changes");
   }
-
   ngOnInit(): void {
     console.log("parent init");
   }
@@ -40,6 +42,14 @@ export class ParentComponent implements OnInit, OnChanges {
   
   ngAfterViewChecked(): void {
     console.log("parent after view Checked");
+  }
+
+  ngOnDestroy(): void{
+    console.log("parent on destroy");
+  }
+
+  getChildData(val: any): void{
+    console.log('getChildData from child val is ', val);
   }
 
   Inc(){

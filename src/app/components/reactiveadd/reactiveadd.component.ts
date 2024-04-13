@@ -19,7 +19,7 @@ export class ReactiveaddComponent implements OnInit {
   {
       this.list = this.fb.group({
         rId: new FormControl('', [Validators.required]), // used in formgroup
-        rName: ['', Validators.required, Validators.minLength(5)],
+        rName: ['', Validators.required, Validators.minLength(5)], // new way
         rType: ['Test Reactive', Validators.required],  // Short way to define field using form builder
       });
   }

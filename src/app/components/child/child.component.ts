@@ -1,16 +1,20 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, ChangeDetectionStrategy, Component, DoCheck, OnChanges, OnInit } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, ChangeDetectionStrategy, 
+  Component, DoCheck, EventEmitter, OnChanges, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.css'],
   changeDetection: ChangeDetectionStrategy.Default,
-  inputs: ['fromParent']
+  inputs: ['fromParent'],
+  outputs: ['toParent'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class ChildComponent implements OnInit, OnChanges, DoCheck, AfterContentInit, AfterContentChecked,
-  AfterViewInit, AfterViewChecked {
+  AfterViewInit, AfterViewChecked, OnDestroy {
 
   fromParent: string = "";
+  toParent = new EventEmitter<string>();
   counterIncrement: number=0;
 
   constructor() { }
@@ -41,6 +45,14 @@ export class ChildComponent implements OnInit, OnChanges, DoCheck, AfterContentI
 
   ngAfterViewChecked(): void {
     console.log("child after view Checked");
+  }
+
+  ngOnDestroy(): void{
+    console.log("child on destroy");
+  }
+
+  SendDataToParent(): void{
+    this.toParent.emit('from child to parent');
   }
 
   increament(): void{
