@@ -1,0 +1,52 @@
+<div class="row m-1">
+    <div class="col-sm-8">
+        <p>About us component, Sectoin-1, example of ng-content or content projection</p>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td>Mobile Number</td>
+                    <td>Gender</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let e of emp">
+                    <td>{{ e.ID }}</td>
+                    <td>{{ e.Name | uppercase }}</td>
+                    <td>{{ e.MobNumber }}</td>
+                    <td>{{ e.Gender | booltogender }}</td>
+                    <td>
+                        <a [routerLink]="[e.ID, 'edit']">Edit Anchor</a>
+                        <button class="btn btn-info m-2" [routerLink]="[e.ID,'edit']">Edit RL-A</button> 
+                        <!-- <button class="btn btn-success m-2" routerLink="/interview"+e.ID+ "/edit"]">Edit-</button> -->
+                        <button class="btn btn-success m-2" (click)="goToEditPage(e.ID)" >Edit-func</button>
+                        <button class="btn btn-success m-2" [routerLink]="[e.ID,'edit']" [queryParams]="{question: 'test :' + e.ID}">Edit-Qrystr</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-sm-4">
+        
+    </div>
+</div>
+<div class="row m-1">
+    <div class="col-sm-6">
+        Data from Child Component {{ fromChildInParent }}
+    </div>
+</div>
+<div class="row m-1">
+    <div class="col-sm-4">
+        Name : <input appSetcolor type="text" name="Name" #id [(ngModel)]="currentItem" class="form-control">
+        <button class="btn btn-info m-2">Send</button>
+    </div>
+    <div class="col-sm-8">
+        <app-interview1 [fromInput]="currentItem" (fromChild)="getChildData($event)">
+            <span>Welcome to tag element(span)</span>
+            <h3 id="test">Welcome to id element(h3)</h3>
+            <b>Bold</b>
+        </app-interview1>
+    </div>
+</div>

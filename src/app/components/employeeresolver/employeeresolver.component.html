@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-md-6">
+        <p>employeeresolver works!</p>
+        <h3>Check data in console</h3>
+        
+        <h3> Counter {{ counter }}</h3>
+    </div>
+    <div class="col-md-6"></div>
+</div>
+<div class="row">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Gender</td>
+                <td>Salary</td>
+                <td>Active</td>
+            </tr>
+        </thead>
+        <thead>
+            <tr *ngFor="let e of employee">
+                <td>{{ e.empID }}</td>
+                <td>{{ e.empFName | uppercase }}</td>
+                <td>{{ e.empLName | uppercase }}</td>
+                <td>{{ e.gender }}</td>
+                <td>{{ e.salary }}</td>
+                <td>{{ e.isActive }}</td>
+            </tr>
+        </thead>
+    </table>
+</div>

@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'booleanValue'
+  name: 'booleanValue',
+  pure: true
 })
 export class BooleanValuePipe implements PipeTransform {
 

@@ -1,0 +1,42 @@
+<h3>Teamplate Driven Forms Validation</h3>
+<!-- <p>Form Values : validationForm | json</p> -->
+<form (ngSubmit)="onSubmit(validationForm.value)" #validationForm="ngForm">
+    <div class="row">
+        <div class="form-group col-md-6">
+            <label for="firstName">First Name</label>
+            <input type="text" name="firstName" id="firstName" class="form-control" required minlength="5"
+                maxlength="10" ngModel #firstName="ngModel" autocomplete="off">
+            <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">
+                <div *ngIf="firstName.errors?.required">First Name is required</div>
+                <div *ngIf="firstName.errors?.minlength">First Name is minimum {{
+                    firstName.errors?.minlength.requiredLength
+                    }} charactor</div>
+                <div *ngIf="firstName.errors?.maxlength">First Name is maximum {{
+                    firstName.errors?.maxlenght.requiredLength
+                    }} charactor</div>
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="lastName">Last Name</label>
+            <input type="text" name="lastName" id="lastName" class="form-control" required minlength="5" maxlength="10"
+                ngModel #lastName="ngModel" autocomplete="off">
+            <div class="alert alert-danger" *ngIf="lastName.touched && !lastName.valid">
+                <div *ngIf="lastName.errors?.required">Last name is required.</div>
+                <div *ngIf="lastName.errors?.minlength">Last Name is minimum {{
+                    lastName.errors?.minlength.requiredLength }} charactor</div>
+                <div *ngIf="lastName.errors?.maxlength">Last Name is Maximum</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <button type="submit" [disabled]="!validationForm.valid" class="btn btn-success m-1">Save</button>
+            <button type="button" class="btn btn-info" (click)="Clear()">Cancel</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            {{ validationForm.valid }}
+        </div>
+    </div>
+</form>
