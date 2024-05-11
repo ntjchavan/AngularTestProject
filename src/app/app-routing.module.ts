@@ -15,6 +15,7 @@ import { ParentComponent } from './components/parent/parent.component';
 import { ValidationsComponent } from './components/validations/validations.component';
 import { ReactiveformsComponent } from './components/reactiveforms/reactiveforms.component';
 import { ReactiveaddComponent } from './components/reactiveadd/reactiveadd.component';
+import { ImageSliderComponent } from './components/imageSlider/imageSlider.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -38,6 +39,7 @@ const routes: Routes = [
   { path: "reactiveform", component: ReactiveformsComponent, pathMatch: 'full' },
   { path: 'reactiveadd', component: ReactiveaddComponent, pathMatch: 'full' },
   { path: 'reactiveadd/:rid/edit', component: ReactiveaddComponent, pathMatch: 'full' },
+  { path: 'slider', component: ImageSliderComponent, pathMatch: 'full' },
   { path: '', component: HomeComponent },
   { path: '**', component: NotfoundComponent }
 ];

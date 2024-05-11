@@ -35,6 +35,7 @@ import { ChildComponent } from './components/child/child.component';
 import { ValidationsComponent } from './components/validations/validations.component';
 import { ReactiveformsComponent } from './components/reactiveforms/reactiveforms.component';
 import { ReactiveaddComponent } from './components/reactiveadd/reactiveadd.component';
+import { ImageSliderComponent } from './components/imageSlider/imageSlider.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { ReactiveaddComponent } from './components/reactiveadd/reactiveadd.compo
     ChildComponent,
     ValidationsComponent,
     ReactiveformsComponent,
-    ReactiveaddComponent
+    ReactiveaddComponent,
+    ImageSliderComponent
   ],
   imports: [
     BrowserModule,
